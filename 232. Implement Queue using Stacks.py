@@ -25,7 +25,6 @@ class MyQueue(object):
         """
         self.stack_in.append(x)
         
-
     def pop(self):
         """
         :rtype: int
@@ -40,7 +39,6 @@ class MyQueue(object):
                 self.stack_out.append(self.stack_in.pop())
             return self.stack_out.pop()
         
-
     def peek(self):
         """
         :rtype: int
@@ -49,7 +47,6 @@ class MyQueue(object):
         self.stack_out.append()
         return ans
         
-
     def empty(self):
         """
         :rtype: bool
