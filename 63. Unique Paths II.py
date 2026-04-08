@@ -11,4 +11,31 @@ class Solution(object):
         :type obstacleGrid: List[List[int]]
         :rtype: int
         """
-        
+        m = len(obstacleGrid)  # rows
+        n = len(obstacleGrid[0])  # cols
+        dp = [[0] * n for _ in range(m)]
+
+        for i in range(m):
+            if obstacleGrid[i][0] == 1:
+                break
+            else:
+                dp[i][0] = 1
+
+        for k in range(n):
+            if obstacleGrid[0][k] == 1:
+                break
+            else:
+                dp[0][k] = 1
+
+        for p in range(1, m):
+            for q in range(1, n):
+                if obstacleGrid[p][q] == 1:
+                    dp[p][q] = 0
+                else:
+                    dp[p][q] = dp[p-1][q] + dp[p][q-1]
+
+        return dp[m-1][n-1]
+
+# test
+obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]
+print(Solution.uniquePathsWithObstacles(Solution(), obstacleGrid))
