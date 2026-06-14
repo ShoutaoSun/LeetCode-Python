@@ -1,5 +1,5 @@
 '''
-    回溯算法练习
+    回溯算法练习 - 组合问题
 '''
 
 class Solution(object):
