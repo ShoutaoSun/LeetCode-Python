@@ -23,7 +23,7 @@ class Solution(object):
         for i in range(startIndex, n + 1):
             path.append(i)
             self.backtracking(n, k, i + 1, path, result)
-            path.pop() 
+            path.pop()
 
 # test
 n = 4
